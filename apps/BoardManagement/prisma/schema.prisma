@@ -1,0 +1,34 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Board {
+  createdAt      DateTime @default(now())
+  id             String   @id @default(cuid())
+  name           String?
+  posterImageUrl String?
+  updatedAt      DateTime @updatedAt
+}
+
+model ImageGenerationHistory {
+  createdAt         DateTime @default(now())
+  generatedImageUrl String?
+  id                String   @id @default(cuid())
+  parametersUsed    String?
+  promptDescription String?
+  updatedAt         DateTime @updatedAt
+}
+
+model Image {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  tags      String?
+  title     String?
+  updatedAt DateTime @updatedAt
+  url       String?
+}
