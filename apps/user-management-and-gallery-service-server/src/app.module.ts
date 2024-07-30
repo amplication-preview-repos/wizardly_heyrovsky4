@@ -1,9 +1,4 @@
 import { Module } from "@nestjs/common";
-import { ImageModule } from "./image/image.module";
-import { SubscriptionPlanModule } from "./subscriptionPlan/subscriptionPlan.module";
-import { BoardModule } from "./board/board.module";
-import { ImageGenerationHistoryModule } from "./imageGenerationHistory/imageGenerationHistory.module";
-import { MovieModule } from "./movie/movie.module";
 import { UserModule } from "./user/user.module";
 import { HealthModule } from "./health/health.module";
 import { PrismaModule } from "./prisma/prisma.module";
@@ -17,11 +12,6 @@ import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
 @Module({
   controllers: [],
   imports: [
-    ImageModule,
-    SubscriptionPlanModule,
-    BoardModule,
-    ImageGenerationHistoryModule,
-    MovieModule,
     UserModule,
     HealthModule,
     PrismaModule,

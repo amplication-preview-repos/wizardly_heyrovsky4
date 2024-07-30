@@ -7,50 +7,6 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Image {
-  createdAt DateTime @default(now())
-  id        String   @id @default(cuid())
-  tags      String?
-  title     String?
-  updatedAt DateTime @updatedAt
-  url       String?
-}
-
-model SubscriptionPlan {
-  createdAt   DateTime @default(now())
-  description String?
-  id          String   @id @default(cuid())
-  name        String?
-  price       Float?
-  updatedAt   DateTime @updatedAt
-}
-
-model Board {
-  createdAt      DateTime @default(now())
-  id             String   @id @default(cuid())
-  name           String?
-  posterImageUrl String?
-  updatedAt      DateTime @updatedAt
-}
-
-model ImageGenerationHistory {
-  createdAt         DateTime @default(now())
-  generatedImageUrl String?
-  id                String   @id @default(cuid())
-  parametersUsed    String?
-  promptDescription String?
-  updatedAt         DateTime @updatedAt
-}
-
-model Movie {
-  createdAt   DateTime  @default(now())
-  description String?
-  id          String    @id @default(cuid())
-  releaseDate DateTime?
-  title       String?
-  updatedAt   DateTime  @updatedAt
-}
-
 model User {
   createdAt DateTime @default(now())
   email     String?  @unique
